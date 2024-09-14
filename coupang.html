@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+
+    <style>
+        .header{
+            margin-top: 50px;
+            text-align: center;
+        }
+        .header > img {
+            width: 220px;
+        }
+
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+
+        .input-container {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+        }
+        .input-container img{
+            width:40px; 
+            height: 40px; 
+            border: 1px solid black; 
+            padding: 6px; 
+            border-radius: 3px; 
+            background-color: rgb(240, 240, 240);
+        }
+
+        .icon {
+        padding: 10px;
+        background: white;
+        color: rgb(172, 170, 170);
+        min-width: 50px;
+        text-align: center;
+        border-color: rgb(204, 197, 197);
+        outline-color: rgb(190, 186, 186);
+        }
+
+        .input-field {
+        width: 100%;
+        padding: 10px;
+        outline: none;
+        }
+
+        .input-field:focus {
+        border: 2px solid dodgerblue;
+        }
+
+        .btn {
+        margin-top: 30px;
+        background-color: dodgerblue;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        font-size: 17px;
+        }
+
+        .btn:hover {
+        opacity: 1;
+        }
+
+        .cont{
+        border: 1px solid gray;
+        border-radius: 4px;
+        padding: 15px;
+        margin-top: 15px;
+        width: 513px;
+       }
+
+       .checkbox_content{
+            margin-left: 22px;
+            font-size: 12px;
+            margin-top: 5px;
+            line-height: 20px;
+       }
+
+        .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 15px;
+        user-select: none;
+        justify-content: space-between;
+        width: 100%;
+        }
+
+        .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        }
+
+        .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border:solid 1px rgb(158, 155, 155);
+        border-radius: 5px;
+        }
+
+        .container:hover input ~ .checkmark {
+        background-color: #ccc;
+        }
+
+        .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+        }
+
+        .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        }
+
+        .container input:checked ~ .checkmark:after {
+        display: block;
+        }
+
+        .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+        }
+
+        .tab_container{
+            margin-left: 28px;
+        }
+
+        .right_button1, .right_button2, .right_button3, .right_button4, .right_button5, .right_button6{
+            font-weight: bold;
+        }
+        
+        .right_button1{
+            display: inline-block;
+            padding-left: 120px;
+            font-weight: bold;
+        }
+        .right_button2{
+            padding-left: 12px;
+        }
+        .right_button3{
+            padding-left: 12px;
+        }
+        .right_button5{
+            padding-left: 198px;
+        }
+        .line6{
+            line-height: 25px;
+            align-items: center;
+            margin-bottom: 2px;
+        }
+        .right_button6{
+            padding-left: 8px;
+        }
+
+        footer{
+            margin-top: 40px;
+            text-align: center;
+            color: grey;
+            font-size: 14px;
+        }
+        footer>button{
+            text-align: center;
+            font-size: 17px;
+            margin-top:5px;
+            color: rgb(71, 68, 68);
+            border:none;
+        }
+        p{
+            font-size: 13px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .ft{
+            line-height: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header"><img src="img/logo-coupang.png"></div>
+
+    <form action="/action_page.php" style="max-width:500px;margin:auto">
+        <h4>Please fill in your information</h4>
+        
+        <div class="input-container">
+          <img src="img/email.png" alt="Email">
+          <input class="input-field" type="email" placeholder="Username(Email)" name="email" required>
+        </div>
+
+        <div class="input-container">
+            <img src="img/password.png" alt="Password">
+            <input class="input-field" type="text" placeholder="Password" name="psw" required>
+        </div>
+        
+        <div class="input-container">
+            <img src="img/checkpassword.png" alt="Confirm Password">
+            <input class="input-field" type="text" placeholder="Confirm Password" name="psw" required>
+        </div>
+
+        <div class="input-container">
+          <img src="img/name.png" alt="Name">
+          <input class="input-field" type="text" placeholder="Name" name="usrnm">
+        </div>
+      
+        <div class="input-container">
+          <img src="img/Mobile.png" alt="Mobile Number">
+          <input class="input-field" type="number" placeholder="Mobile Number" name="pnb">
+        </div>
+
+        <!-- Consent Form -->
+        <label class="container">
+            [I have read and agree to All terms]
+            <input type="checkbox" id="select-all">
+            <span class="checkmark"></span>
+            <div class="checkbox_content">
+                The general agreement includes consent to both required and optional information, and you may choose to agree to them individually. You can still use the service even if you decline to consent to optional items.
+            </div>
+        </label>
+
+        <!-- Individual Selection -->
+        <div class="cont">
+            <label class="container">[Required] 14 yesrs or older only
+                <input type="checkbox" class="agree-checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">[Required] Agree to Coupang Terms of Service
+                <span class="right_button1">></span>
+                <input type="checkbox" class="agree-checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">[Required] Agree to Collection and Use of Personal Information
+                <span class="right_button2">></span>
+                <input type="checkbox" class="agree-checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">[Required] Agree to Collection and Use of Personal Information
+                <span class="right_button3">></span>
+                <input type="checkbox" class="agree-checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">[Required] Agree to Third-Party Provision of Personal Information
+                <span class="right_button4">></span>
+                <input type="checkbox" class="agree-checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container line6">[Optional] Consent to the Collection and Use of Personal Information for Marketing Purposes
+                <span class="right_button5">></span>
+                <input type="checkbox" class="agree-checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">[Optional] Agree to Receive SMS and Social Media Notifications
+                <span class="right_button6">></span>
+                <input type="checkbox" class="agree-checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <div class="tab_container">
+                <label class="container">   
+                    [Optional] Agree to Receive Emails
+                    <input type="checkbox" class="agree-checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                    [Optional] Agree to Receive SMS and Social Media Notifications
+                    <input type="checkbox" class="agree-checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                    [Optional] Agree to Receive Financial Consultant Notifications
+                    <input type="checkbox" class="agree-checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Agree Button -->
+        <button type="submit" class="btn">Agree and Sign Up</button>
+    </form>
+
+    <!-- footer -->
+    <footer>
+        <div class="ft">
+            Are you a corporate customer? <br/>
+            Enjoy exclusive special offers as a business member
+        </div>
+        <button>
+           <strong>
+               Coupang Biz Easy Sign-Up >
+           </strong>
+        </button>
+        
+        <p>&copy; Coupang Corp. All rights reserved. </p>
+    </footer>
+
+    <script>
+        document.getElementById('select-all').addEventListener('click', function(event) {
+            const isChecked = event.target.checked;
+            const checkboxes = document.querySelectorAll('.agree-checkbox');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = isChecked;
+            });
+        });
+    </script>
+</body>
+</html>
